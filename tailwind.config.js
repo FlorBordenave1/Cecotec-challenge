@@ -19,13 +19,14 @@ module.exports = {
       },
       colors: {
         white: "#fff",
+        neutral30: "#EAECF0",
         neutral100: "#242422",
         primary: "#1A7F96",
         gradientFrom: "#5BC0CD",
         gradientTo: "#BDF3F3",
         blue10: "#C5F5F5",
+        blue50: "#1A7F96",
 
-        //
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

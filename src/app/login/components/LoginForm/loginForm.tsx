@@ -1,17 +1,37 @@
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { ChangeEvent, SyntheticEvent } from "react";
+
 import Image from "next/image";
-import logo from "../../../../../public/images/LogoCecotec.png";
-import styles from "./loginForm.module.css";
+
+import { cn } from "@/lib/utils";
+
+import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
 import { CustomInput } from "@/components/customInput";
 
+import { UserData } from "../../login.controller";
+
+import logo from "../../../../../public/images/LogoCecotec.png";
+import styles from "./loginForm.module.css";
+
+type LoginFormType = React.ComponentPropsWithoutRef<"form"> & {
+  userData: UserData;
+  handleChangeInput: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleLogin: (e: SyntheticEvent) => void;
+};
+
 export function LoginForm({
   className,
+  userData,
+  handleChangeInput,
+  handleLogin,
   ...props
-}: React.ComponentPropsWithoutRef<"form">) {
+}: LoginFormType) {
   return (
-    <form className={cn("flex flex-col", className)} {...props}>
+    <form
+      className={cn("flex flex-col", className)}
+      {...props}
+      onSubmit={handleLogin}
+    >
       <div className={styles.formContent}>
         <Image priority src={logo} alt="Logo Cecotec" />
 
@@ -23,8 +43,20 @@ export function LoginForm({
 
         <div className={styles.inputButtonContainer}>
           <div className={styles.inputContainer}>
-            <CustomInput label="Email" placeholder="arieldominguez@gmail.com" />
-            <CustomInput label="Contraseña" type="password" />
+            <CustomInput
+              value={userData.email}
+              label="Email"
+              placeholder="arieldominguez@gmail.com"
+              name="email"
+              onChange={handleChangeInput}
+            />
+            <CustomInput
+              value={userData.password}
+              label="Contraseña"
+              type="password"
+              name="password"
+              onChange={handleChangeInput}
+            />
           </div>
 
           <Button type="submit" variant="primary">

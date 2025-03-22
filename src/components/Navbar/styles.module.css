@@ -1,0 +1,26 @@
+.navbarContainer {
+  @apply w-full  bg-neutral30 shadow-neutral30 py-3 px-4 border-0 rounded-none flex items-center justify-center gap-6 h-[64px];
+}
+.navbarContent {
+  @apply w-full max-w-[1436px] flex items-center justify-between gap-6;
+}
+
+.imageContainer {
+  @apply basis-1/4  hover:cursor-pointer;
+}
+
+.actionsContainer {
+  @apply flex flex-row w-auto basis-3/4  items-center justify-end gap-6;
+}
+
+.actionsContent {
+  @apply gap-2 flex flex-row items-center;
+}
+
+.iconContainer {
+  @apply min-w-[24px]  hover:cursor-pointer;
+}
+
+.button {
+  @apply min-w-[12px] h-[25px] px-2 bg-blue50 text-white font-medium;
+}
