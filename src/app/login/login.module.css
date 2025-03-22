@@ -1,0 +1,23 @@
+.loginContainer {
+  @apply grid min-h-svh lg:grid-cols-2 bg-neutral100;
+}
+
+.leftBlock {
+  @apply flex flex-col flex-1 items-center h-full w-full min-w-0 box-border mx-auto;
+}
+
+.formContainer {
+  @apply flex-grow flex items-center justify-center;
+}
+
+.form {
+  @apply flex flex-col items-center justify-center space-y-reverse w-full max-w-[468px] min-w-0 box-border mx-auto;
+}
+
+.imageContainer {
+  @apply relative hidden bg-muted lg:block;
+}
+
+.image {
+  @apply absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale;
+}

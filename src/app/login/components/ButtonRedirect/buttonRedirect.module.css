@@ -1,0 +1,11 @@
+.redirectLink {
+  @apply mt-auto self-start text-blue10 font-bold;
+}
+
+.buttonContainer {
+  @apply grid gap-2 relative w-full max-w-[468px] ml-4 mb-14;
+}
+
+.buttonContent {
+  @apply flex items-center gap-2 hover:cursor-pointer;
+}

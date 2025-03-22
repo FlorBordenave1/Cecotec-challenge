@@ -1,3 +1,4 @@
+import { UserContextProvider } from "@/context/UserContext";
 import "./globals.css";
 
 export default function RootLayout({
@@ -7,7 +8,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <UserContextProvider>{children}</UserContextProvider>
+      </body>
     </html>
   );
 }

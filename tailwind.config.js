@@ -9,12 +9,23 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
+        white: "#fff",
+        neutral100: "#242422",
+        primary: "#1A7F96",
+        gradientFrom: "#5BC0CD",
+        gradientTo: "#BDF3F3",
+        blue10: "#C5F5F5",
+
+        //
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -24,10 +35,6 @@ module.exports = {
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
-        },
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
