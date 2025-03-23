@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  images: {
+    domains: ["media.cecotec.cloud"],
+  },
 };
 
 export default nextConfig;

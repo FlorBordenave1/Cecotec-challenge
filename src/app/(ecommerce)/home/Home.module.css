@@ -1,3 +1,11 @@
-.btn {
-  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+.homeContainer {
+  @apply h-full flex flex-col items-center justify-start p-4;
+}
+
+.homeContent {
+  @apply h-full flex flex-col  max-w-[1436px] mt-20 gap-7;
+}
+
+.cardsContainer {
+  @apply grid gap-4 grid-cols-2 md:grid-cols-4 lg:grid-cols-5;
 }

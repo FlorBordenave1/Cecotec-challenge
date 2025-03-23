@@ -1,17 +1,28 @@
 import Link from "next/link";
+import { CategoryCard } from "./components/categoryCard";
+import { Typography } from "@/components/ui/typography";
+import { CategoriesService } from "@/services/categoriesService";
+
 import styles from "./Home.module.css";
 
-const Home = () => {
-  const categories = ["aspiradoras", "robots"];
+const Home = async () => {
+  const categories = await CategoriesService.getCategories();
+
   return (
-    <div>
-      <h1>Página de Inicio</h1>
-      <div className="flex flex-col">
-        {categories.map((category) => (
-          <Link key={category} href={`/${category}`}>
-            {category}
-          </Link>
-        ))}
+    <div className={styles.homeContainer}>
+      <div className={styles.homeContent}>
+        <Typography
+          variant="h1"
+          label="Nuestras categorías"
+          className="font-extrabold"
+        />
+        <div className={styles.cardsContainer}>
+          {categories.map((category, index) => (
+            <Link key={`${category}_${index}`} href={`/${category.slug}`}>
+              <CategoryCard key={index} data={category} />
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

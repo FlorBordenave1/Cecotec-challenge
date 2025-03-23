@@ -10,9 +10,12 @@
 }
 
 .actionsContainer {
-  @apply flex flex-row w-auto basis-3/4  items-center justify-end gap-6;
+  @apply hidden md:flex flex-row w-auto basis-3/4  items-center justify-end gap-6;
 }
 
+.actionsContainerMobile {
+  @apply flex md:hidden mr-2 items-center gap-2;
+}
 .actionsContent {
   @apply gap-2 flex flex-row items-center;
 }

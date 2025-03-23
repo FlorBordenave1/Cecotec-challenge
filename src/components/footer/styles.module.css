@@ -1,0 +1,11 @@
+.navbarContainer {
+  @apply flex flex-row items-center justify-center w-full bg-neutral30 py-3 px-4 border-0 gap-16 gap-8 md:gap-16 rounded-none h-[64px];
+}
+
+.logoutButton {
+  @apply flex flex-row items-center justify-center gap-1 hover:cursor-pointer w-1/2 md:w-auto;
+}
+
+.text {
+  @apply font-bold;
+}

@@ -1,0 +1,7 @@
+.cardContainer {
+  @apply w-full p-2 bg-neutral20 h-40 rounded-xl  hover:bg-neutral30  hover:shadow-[0_0_10px] hover:shadow-neutral30;
+}
+
+.image {
+  @apply absolute inset-0 h-full  object-cover dark:brightness-[0.2] dark:grayscale;
+}

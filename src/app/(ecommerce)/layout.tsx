@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
 export default function RootLayout({
@@ -6,11 +7,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <Navbar />
-        {children}
-      </body>
-    </html>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <div className="flex-1 overflow-y-auto">{children}</div>
+      <Footer />
+    </div>
   );
 }
