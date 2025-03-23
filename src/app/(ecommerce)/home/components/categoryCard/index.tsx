@@ -16,10 +16,7 @@ interface CategoryCardProps {
 export const CategoryCard = ({ data }: CategoryCardProps) => {
   return (
     <div className={styles.cardContainer}>
-      <div
-        onClick={() => console.log("asd")}
-        className="cursor-pointer h-full flex flex-row items-center justify-start"
-      >
+      <div className="cursor-pointer h-full flex flex-row items-center justify-start">
         <div className="relative w-full h-full">
           <Image
             priority

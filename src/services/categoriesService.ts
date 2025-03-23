@@ -1,3 +1,4 @@
+import { baseUrl } from "./constants";
 import { GetCategoriesResponse, GetCategoryBySlugResponse } from "./types";
 
 type TCategoriesService = {
@@ -6,8 +7,6 @@ type TCategoriesService = {
     categorySlug: string
   ) => Promise<GetCategoryBySlugResponse[]>;
 };
-
-const baseUrl = "https://67dbfb6d1fd9e43fe476b875.mockapi.io/api/v1";
 
 export const CategoriesService: TCategoriesService = {
   getCategories: async (): Promise<GetCategoriesResponse[]> => {
@@ -19,8 +18,16 @@ export const CategoriesService: TCategoriesService = {
   getCategoryBySlug: async (
     categorySlug: string
   ): Promise<GetCategoryBySlugResponse[]> => {
-    const res = await fetch(`${baseUrl}/${categorySlug}`);
+    try {
+      const res = await fetch(`${baseUrl}/${categorySlug}`);
 
-    return res.json();
+      const productsByCategory = await res.json();
+
+      if (!Array.isArray(productsByCategory)) return [];
+
+      return productsByCategory;
+    } catch (error) {
+      throw new Error("Ocurrió un error");
+    }
   },
 };

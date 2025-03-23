@@ -30,8 +30,8 @@ const tags: Record<Variant, ElementType> = {
 
 const sizes: Record<Variant, string> = {
   h1: "text-lg sm:text-xl md:text-2xl lg:text-[33px]", //
-  h2: "text-[28px] sm:text-[24px] md:text-[20px] lg:text-[18px]",
-  h3: "text-[16px] sm:text-[12px] md:text-[10px] lg:text-[8px]",
+  h2: "text-[18px] md:text-[20px] sm:text-[24px] lg:text-[28px]", //
+  h3: "text-[8px] md:text-[10px]  sm:text-[12px] lg:text-[16px]", //
   h4: "text-[20px] sm:text-[18px] md:text-[16px] lg:text-[14px]",
   h5: "text-[18px] sm:text-[16px] md:text-[14px] lg:text-[12px]",
   body: "text-[12px] sm:text-[14px] md:text-[16px]", //

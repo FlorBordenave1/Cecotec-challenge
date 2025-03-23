@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
-    domains: ["media.cecotec.cloud"],
+    domains: ["media.cecotec.cloud", "media-pre.cecotec.cloud"],
   },
 };
 
