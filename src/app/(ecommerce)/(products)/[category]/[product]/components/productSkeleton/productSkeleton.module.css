@@ -6,34 +6,14 @@
   @apply flex flex-col md:flex-row gap-4 md:gap-16 justify-center items-center w-full max-w-5xl mx-auto;
 }
 
-.skeletonImage {
-  @apply w-[700px] h-[300px] md:h-[500px] bg-gray-200 animate-pulse rounded-lg;
-}
-
 .imageContainer {
   @apply w-full md:w-1/2 flex justify-center bg-neutral30;
 }
 
-.image {
-  @apply object-cover w-full max-w-[500px] h-auto md:max-h-[700px];
+.skeletonImage {
+  @apply w-[700px] h-[300px] md:h-[500px] bg-gray-200 animate-pulse rounded-lg;
 }
 
 .productInfoContainer {
   @apply w-full md:w-1/2 flex flex-col items-start justify-center w-full max-w-md text-center gap-x-2;
-}
-
-.infoContainer {
-  @apply flex flex-row items-center justify-center gap-4;
-}
-
-.price {
-  @apply text-cherry60 font-extrabold;
-}
-
-.priceContainer {
-  @apply flex flex-row items-end justify-center gap-4 mt-2;
-}
-
-.button {
-  @apply mt-12 h-auto;
 }

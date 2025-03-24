@@ -1,0 +1,11 @@
+.dropdownButton {
+  @apply h-8 w-8 rounded-lg scale-90 text-white text-primary;
+}
+
+.dropdownMenu {
+  @apply h-5 w-5 rotate-0 scale-100 text-white;
+}
+
+.actionsContent {
+  @apply gap-2 flex flex-row items-center;
+}

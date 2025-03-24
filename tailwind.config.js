@@ -19,11 +19,13 @@ module.exports = {
       },
       colors: {
         apple20: "#D9E9D0",
+        apple50: "#457A14",
         apple70: "#2C4B0F",
         blue10: "#C5F5F5",
         blue40: "#484D5A",
         blue50: "#1A7F96",
         blue60: "#073047",
+        cherry50: "#DD0047",
         cherry60: "#98002E",
         gradientFrom: "#5BC0CD",
         gradientTo: "#BDF3F3",
@@ -73,6 +75,9 @@ module.exports = {
           4: "hsl(var(--chart-4))",
           5: "hsl(var(--chart-5))",
         },
+      },
+      zIndex: {
+        100: "100",
       },
     },
   },

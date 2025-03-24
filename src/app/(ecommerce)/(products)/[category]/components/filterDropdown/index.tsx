@@ -18,7 +18,7 @@ export const FilerDropdown = ({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="primary" className="w-[120px]">
+        <Button variant="primary" className="w-[120px] ml-4">
           Filtrar
         </Button>
       </DropdownMenuTrigger>

@@ -1,9 +1,9 @@
 .cardContainer {
-  @apply p-4 bg-neutral20 h-[417px] rounded-xl hover:bg-neutral30 hover:shadow-[0_0_10px] hover:shadow-neutral30;
+  @apply p-4 bg-neutral20 h-[283px] md:h-[417px] rounded-xl hover:bg-neutral30 hover:shadow-[0_0_10px] hover:shadow-neutral30;
 }
 
 .cardContent {
-  @apply cursor-pointer h-full items-center justify-center flex flex-col;
+  @apply cursor-pointer h-full items-center justify-start flex flex-col gap-2;
 }
 
 .image {

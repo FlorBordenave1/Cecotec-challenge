@@ -1,5 +1,5 @@
 .footerContainer {
-  @apply h-[174px] bg-neutralDark align-center items-center justify-center flex flex-col gap-6;
+  @apply h-[174px] bg-neutralDark items-center justify-center flex flex-col gap-6 px-4;
 }
 
 .footerContent {

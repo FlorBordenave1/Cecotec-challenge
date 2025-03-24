@@ -42,18 +42,22 @@ const Checkout = () => {
         />
       )}
 
-      <Header quantity={sumQuantities(checkoutContext?.items)} />
-      {checkoutContext?.items.map((item: CartItem, index: number) => (
-        <ItemCard
-          key={`${item.name}_${index}`}
-          data={item}
-          addUnit={() => checkoutContext?.addUnit(item)}
-          removeUnit={() => checkoutContext?.removeUnit(item)}
-          removeItem={() => checkoutContext?.removeItem(item)}
-        />
-      ))}
-      <div className={styles.footerContainer}>
-        <CheckoutFooter handleCompleteOrder={() => setOpenDialog(true)} />
+      <div className="flex justify-between flex-col h-[calc(100vh-64px)]">
+        <div>
+          <Header quantity={sumQuantities(checkoutContext?.items)} />
+          {checkoutContext?.items.map((item: CartItem, index: number) => (
+            <ItemCard
+              key={`${item.name}_${index}`}
+              data={item}
+              addUnit={() => checkoutContext?.addUnit(item)}
+              removeUnit={() => checkoutContext?.removeUnit(item)}
+              removeItem={() => checkoutContext?.removeItem(item)}
+            />
+          ))}
+        </div>
+        <div className={styles.footerContainer}>
+          <CheckoutFooter handleCompleteOrder={() => setOpenDialog(true)} />
+        </div>
       </div>
     </>
   );

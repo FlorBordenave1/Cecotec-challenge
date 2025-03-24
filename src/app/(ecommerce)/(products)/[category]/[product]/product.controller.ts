@@ -11,6 +11,7 @@ export const useProductController = () => {
   }>();
   const checkoutContext = use(CheckoutContext);
   const [product, setProduct] = useState<GetCategoryBySlugResponse>();
+  const [isLoadingProduct, setIsLoadingProduct] = useState<boolean>(true);
   const hasProductStock = product?.pricing?.isInStock;
 
   const getProductByCategory = async () => {
@@ -20,6 +21,7 @@ export const useProductController = () => {
     );
 
     setProduct(productByCategory);
+    setIsLoadingProduct(false);
   };
 
   useEffect(() => {
@@ -27,9 +29,10 @@ export const useProductController = () => {
   }, []);
 
   return {
-    product,
     category,
-    hasProductStock,
     checkoutContext,
+    hasProductStock,
+    isLoadingProduct,
+    product,
   };
 };

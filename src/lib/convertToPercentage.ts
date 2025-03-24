@@ -1,5 +1,5 @@
 export const convertToPercentage = (value: string) => {
   const number = parseFloat(value);
 
-  return `${(number * 100).toFixed(2)}%`;
+  return Math.round(number * 100);
 };

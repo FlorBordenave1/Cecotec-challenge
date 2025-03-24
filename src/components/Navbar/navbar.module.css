@@ -1,16 +1,13 @@
 .navbarContainer {
-  @apply w-full  bg-neutral30 shadow-neutral30 py-3 px-4 border-0 rounded-none flex items-center justify-center gap-6 h-[64px];
+  @apply sticky z-[100] top-0 w-full bg-neutral30 shadow-neutral30 py-3 px-4 border-0 rounded-none flex items-center justify-center gap-6 h-[64px];
 }
+
 .navbarContent {
   @apply w-full max-w-[1436px] flex items-center justify-between gap-6;
 }
 
-.imageContainer {
-  @apply basis-1/4  hover:cursor-pointer;
-}
-
 .actionsContainer {
-  @apply hidden md:flex flex-row w-auto basis-3/4  items-center justify-end gap-6;
+  @apply hidden md:flex flex-row w-auto basis-3/4 items-center justify-end gap-6;
 }
 
 .actionsContainerMobile {
@@ -18,21 +15,13 @@
 }
 
 .actionsContent {
-  @apply gap-2 flex flex-row items-center;
+  @apply gap-2 flex flex-row items-center hover:cursor-pointer;
 }
 
 .iconContainer {
-  @apply min-w-[24px]  hover:cursor-pointer;
+  @apply min-w-[24px];
 }
 
 .button {
   @apply min-w-[12px] h-[25px] px-2 bg-blue50 text-white font-medium;
-}
-
-.dropdownButton {
-  @apply h-8 w-8 rounded-lg scale-90 color-white text-primary;
-}
-
-.dropdownMenu {
-  @apply h-5 w-5 rotate-0 scale-100 color-white;
 }

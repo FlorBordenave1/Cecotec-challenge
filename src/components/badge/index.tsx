@@ -10,10 +10,10 @@ enum BadgeBgColor {
 
 interface BadgeProps {
   label: string;
-  type: keyof typeof BadgeColor;
+  type?: keyof typeof BadgeColor;
 }
 
-export const Badge = ({ label, type }: BadgeProps) => {
+export const Badge = ({ label, type = "SUCCESS" }: BadgeProps) => {
   return (
     <div className={`${BadgeBgColor[type]} py-1 px-2 rounded-md`}>
       <Typography

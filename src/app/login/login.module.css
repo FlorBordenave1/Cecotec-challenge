@@ -1,5 +1,5 @@
 .loginContainer {
-  @apply grid min-h-svh lg:grid-cols-2 bg-neutral100;
+  @apply grid min-h-screen lg:grid-cols-2 bg-neutral100;
 }
 
 .leftBlock {

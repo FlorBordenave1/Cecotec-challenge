@@ -3,7 +3,7 @@
 }
 
 .homeContent {
-  @apply h-full flex flex-col  max-w-[1436px] mt-20 gap-7;
+  @apply h-full flex flex-col max-w-[1436px] mt-2 md:mt-16 gap-7;
 }
 
 .cardsContainer {

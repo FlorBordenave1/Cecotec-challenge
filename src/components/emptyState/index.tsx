@@ -20,7 +20,7 @@ const EmptyState = ({
   const route = `/${routeToNavigate}`;
   return (
     <div className={styles.container}>
-      <Typography label={label} variant="h2" />
+      <Typography label={label} variant="h2" className="text-center" />
       <Button variant="primary" onClick={() => router.push(route)}>
         {buttonLabel}
       </Button>

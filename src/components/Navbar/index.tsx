@@ -2,27 +2,16 @@
 import React, { use } from "react";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Typography } from "../ui/typography";
-
 import { UserContext } from "@/context/UserContext";
-import { UserIcon } from "@/icons/userIcon";
 import { CartIcon } from "@/icons/cartIcon";
-
-import logo from "../../../public/images/LogoCecotec.png";
 import styles from "./navbar.module.css";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "../ui/dropdown";
-import { Menu } from "lucide-react";
 import { CheckoutContext } from "@/context/Checkout";
 import { sumQuantities } from "@/lib/sumQuantities";
+import { LogoComponent } from "../logoComponent";
+import { MobileDropdownMenu } from "../mobileDropdownMenu";
+import { AuthButton } from "../authButton";
 
 const Navbar = () => {
   const userContext = use(UserContext);
@@ -30,18 +19,11 @@ const Navbar = () => {
   const router = useRouter();
 
   const isLogged = userContext?.user?.username;
-
+  const userName = userContext?.user?.firstName || "";
   return (
     <Card className={styles.navbarContainer}>
       <div className={styles.navbarContent}>
-        <div className={styles.imageContainer}>
-          <Image
-            priority
-            src={logo}
-            alt="Logo Cecotec"
-            onClick={() => router.push("/home")}
-          />
-        </div>
+        <LogoComponent onClick={() => router.push("/home")} />
 
         <div className={styles.actionsContainer}>
           <div
@@ -53,32 +35,24 @@ const Navbar = () => {
             )}
             onClick={() => !isLogged && router.push("/login")}
           >
-            {!isLogged && <UserIcon />}
-            <Typography
-              label={
-                isLogged
-                  ? `Hola, ${userContext?.user?.firstName}`
-                  : "Iniciar sesion"
-              }
-              variant="body"
-              className="font-medium"
-            />
+            <AuthButton isLogged={Boolean(isLogged)} userName={userName} />
           </div>
           {isLogged && (
-            <div className={styles.actionsContent}>
+            <div
+              className={styles.actionsContent}
+              onClick={() => router.push("/checkout")}
+            >
               <div className={styles.iconContainer}>
                 <CartIcon />
               </div>
 
-              <Button
-                className={styles.button}
-                onClick={() => router.push("/checkout")}
-              >
+              <Button className={styles.button}>
                 {sumQuantities(checkoutContext?.items)}
               </Button>
             </div>
           )}
         </div>
+
         <div className={styles.actionsContainerMobile}>
           {!isLogged ? (
             <div
@@ -90,49 +64,14 @@ const Navbar = () => {
               )}
               onClick={() => !isLogged && router.push("/login")}
             >
-              {!isLogged && <UserIcon />}
-              <Typography
-                label={
-                  isLogged
-                    ? `Hola, ${userContext?.user?.firstName}`
-                    : "Iniciar sesion"
-                }
-                variant="body"
-                className="font-medium"
-              />
+              <AuthButton isLogged={Boolean(isLogged)} userName={userName} />
             </div>
           ) : (
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="primary" className={styles.dropdownButton}>
-                  <Menu className={styles.dropdownMenu} />
-                </Button>
-              </DropdownMenuTrigger>
-
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem>
-                  <div className={styles.actionsContent}>
-                    <Typography
-                      label={`Hola, ${userContext?.user?.firstName}`}
-                      variant="body"
-                      className="font-medium"
-                    />
-                  </div>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  {isLogged && (
-                    <div className={styles.actionsContent}>
-                      <CartIcon />
-                      <Typography
-                        label="Carrito"
-                        variant="body"
-                        className="font-medium"
-                      />
-                    </div>
-                  )}
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <MobileDropdownMenu
+              userName={userName}
+              isLogged
+              onClick={() => router.push("/checkout")}
+            />
           )}
         </div>
       </div>

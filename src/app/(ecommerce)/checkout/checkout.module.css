@@ -3,5 +3,5 @@
 }
 
 .footerContainer {
-  @apply absolute bottom-0 w-full;
+  @apply w-full;
 }

@@ -44,9 +44,7 @@ export const ItemCard = ({
             label={data.name}
             className={styles.productName}
           />
-          {data.shippingShortDescription && (
-            <Badge label="Entrega en 24-48h" type="SUCCESS" />
-          )}
+          {data.shippingShortDescription && <Badge label="Entrega en 24-48h" />}
         </div>
 
         <div className={styles.amountButtonContainer}>
