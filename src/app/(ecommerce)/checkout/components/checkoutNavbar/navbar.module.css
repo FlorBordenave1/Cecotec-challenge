@@ -1,0 +1,3 @@
+.navbarContainer {
+  @apply w-full bg-neutralBlack rounded-none flex items-center justify-center h-[64px];
+}

@@ -3,7 +3,7 @@
 import { Typography } from "../ui/typography";
 import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
-import styles from "./styles.module.css";
+import styles from "./emptyState.module.css";
 
 type EmptyStateProps = {
   label: string;

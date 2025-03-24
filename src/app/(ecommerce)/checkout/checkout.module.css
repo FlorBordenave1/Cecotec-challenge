@@ -1,0 +1,7 @@
+.emptyState {
+  @apply mt-28 items-center justify-center;
+}
+
+.footerContainer {
+  @apply absolute bottom-0 w-full;
+}

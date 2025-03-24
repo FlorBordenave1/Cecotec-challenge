@@ -1,0 +1,14 @@
+.headerContainer {
+  @apply w-full items-center flex justify-center mt-6;
+}
+
+.headerContent {
+  @apply flex flex-row  w-[638px] flex justify-center gap-6 md:gap-36 items-center;
+}
+
+.title {
+  @apply font-extrabold text-blue40;
+}
+.quantityContainer {
+  @apply flex flex-row justify-center gap-2;
+}

@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 
-import { ButtonRedirect } from "./components/ButtonRedirect/buttonRedirect";
+import { ButtonRedirect } from "./components/buttonRedirect/buttonRedirect";
 
 import { useLoginController } from "./login.controller";
 
 import LoginImage from "../../../public/images/login.svg";
 import styles from "./login.module.css";
-import { LoginForm } from "./components/LoginForm/loginForm";
+import { LoginForm } from "./components/loginForm/loginForm";
 
 export default function LoginPage() {
   const { userData, handleChangeInput, handleLogIn } = useLoginController();

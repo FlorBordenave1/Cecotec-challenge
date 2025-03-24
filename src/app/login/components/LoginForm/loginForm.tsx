@@ -31,7 +31,7 @@ export function LoginForm({
       onSubmit={handleLogin}
     >
       <div className={styles.formContent}>
-        <Image priority src={logo} alt="Logo Cecotec" />
+        <Image priority src={logo} alt="Login-Image" />
 
         <Typography
           variant="h1"

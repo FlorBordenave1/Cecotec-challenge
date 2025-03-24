@@ -9,7 +9,8 @@ import { Badge } from "@/components/badge";
 import { useProductController } from "./product.controller";
 
 const Product = () => {
-  const { product, category, hasProductStock } = useProductController();
+  const { product, category, hasProductStock, checkoutContext } =
+    useProductController();
   if (!product) {
     <EmptyState
       label="Ocurrio un error al obtener los datos del producto"
@@ -65,7 +66,11 @@ const Product = () => {
             <Typography variant="body-small" label={`IVA incluido`} />
           </div>
 
-          <Button variant={"primary"} className={styles.button}>
+          <Button
+            variant={"primary"}
+            className={styles.button}
+            onClick={() => product && checkoutContext?.addItem(product)}
+          >
             Comprar
           </Button>
         </div>

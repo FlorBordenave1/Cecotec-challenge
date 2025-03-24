@@ -1,0 +1,43 @@
+.cardContainer {
+  @apply w-full p-2 rounded-xl flex justify-center items-center;
+}
+
+.cardContent {
+  @apply rounded-lg h-full flex flex-wrap md:flex-nowrap items-center justify-center md:justify-between max-w-[668px] w-full bg-white p-4 gap-4 min-h-[200px];
+}
+
+.imageContainer {
+  @apply relative w-[96px] h-[96px] flex-shrink-0;
+}
+
+.image {
+  @apply absolute inset-0 object-contain;
+}
+
+.productInfoContainer {
+  @apply w-full md:w-[30%] text-center gap-2 flex flex-col;
+}
+
+.productName {
+  @apply font-medium text-center md:text-left;
+}
+
+.amountButtonContainer {
+  @apply w-full md:w-[25%] flex justify-center items-center gap-2;
+}
+
+.productPriceContainer {
+  @apply w-full md:w-[25%] text-center flex flex-col items-center;
+}
+
+.productPrice {
+  @apply font-bold text-blue60;
+}
+
+.discountPriceContainer {
+  @apply flex justify-center gap-1 items-center;
+}
+
+.removeButton {
+  @apply mt-3 md:mt-6 flex flex-row items-center gap-2 text-blue60;
+}

@@ -8,7 +8,7 @@ import { LogOutIcon } from "@/icons/logOutIcon";
 
 import { UserContext } from "@/context/UserContext";
 
-import styles from "./styles.module.css";
+import styles from "./footer.module.css";
 
 const Footer = () => {
   const userContext = use(UserContext);

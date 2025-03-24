@@ -3,9 +3,13 @@
 }
 
 .cardContent {
-  @apply cursor-pointer h-full  items-center justify-center flex flex-col;
+  @apply cursor-pointer h-full items-center justify-center flex flex-col;
 }
 
 .image {
   @apply absolute inset-0 h-full  object-cover dark:brightness-[0.2] dark:grayscale;
+}
+
+.price {
+  @apply text-cherry60 font-extrabold;
 }

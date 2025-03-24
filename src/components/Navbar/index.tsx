@@ -13,7 +13,7 @@ import { UserIcon } from "@/icons/userIcon";
 import { CartIcon } from "@/icons/cartIcon";
 
 import logo from "../../../public/images/LogoCecotec.png";
-import styles from "./styles.module.css";
+import styles from "./navbar.module.css";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,9 +21,12 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown";
 import { Menu } from "lucide-react";
+import { CheckoutContext } from "@/context/Checkout";
+import { sumQuantities } from "@/lib/sumQuantities";
 
 const Navbar = () => {
   const userContext = use(UserContext);
+  const checkoutContext = use(CheckoutContext);
   const router = useRouter();
 
   const isLogged = userContext?.user?.username;
@@ -32,7 +35,12 @@ const Navbar = () => {
     <Card className={styles.navbarContainer}>
       <div className={styles.navbarContent}>
         <div className={styles.imageContainer}>
-          <Image priority src={logo} alt="Logo Cecotec" />
+          <Image
+            priority
+            src={logo}
+            alt="Logo Cecotec"
+            onClick={() => router.push("/home")}
+          />
         </div>
 
         <div className={styles.actionsContainer}>
@@ -62,7 +70,12 @@ const Navbar = () => {
                 <CartIcon />
               </div>
 
-              <Button className={styles.button}>15</Button>
+              <Button
+                className={styles.button}
+                onClick={() => router.push("/checkout")}
+              >
+                {sumQuantities(checkoutContext?.items)}
+              </Button>
             </div>
           )}
         </div>
@@ -91,11 +104,8 @@ const Navbar = () => {
           ) : (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button
-                  variant="primary"
-                  className="h-8 w-8 rounded-lg scale-90 color-white text-primary"
-                >
-                  <Menu className="h-5 w-5 rotate-0 scale-100 color-white" />
+                <Button variant="primary" className={styles.dropdownButton}>
+                  <Menu className={styles.dropdownMenu} />
                 </Button>
               </DropdownMenuTrigger>
 

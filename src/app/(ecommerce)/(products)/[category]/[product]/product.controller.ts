@@ -1,30 +1,16 @@
+import { CheckoutContext } from "@/context/Checkout";
 import { ProductsService } from "@/services/productsService";
+import { GetCategoryBySlugResponse } from "@/services/types";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 
-export interface ProductType {
-  id: number;
-  name: string;
-  pricing: Pricing;
-  slug: string;
-  upc: string;
-  mainImage: string;
-  shippingShortDescription: string;
-  sold: number;
-}
-
-export interface Pricing {
-  currency: string;
-  price: string;
-  discountRate: string;
-  isInStock: number;
-}
 export const useProductController = () => {
   const { product: productSlug, category } = useParams<{
     category: string;
     product: string;
   }>();
-  const [product, setProduct] = useState<ProductType>();
+  const checkoutContext = use(CheckoutContext);
+  const [product, setProduct] = useState<GetCategoryBySlugResponse>();
   const hasProductStock = product?.pricing?.isInStock;
 
   const getProductByCategory = async () => {
@@ -44,5 +30,6 @@ export const useProductController = () => {
     product,
     category,
     hasProductStock,
+    checkoutContext,
   };
 };

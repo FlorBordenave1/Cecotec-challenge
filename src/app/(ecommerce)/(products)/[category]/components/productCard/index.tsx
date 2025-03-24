@@ -4,20 +4,13 @@ import Image from "next/image";
 import { Typography } from "@/components/ui/typography";
 import styles from "./styles.module.css";
 import { GetCategoryBySlugResponse } from "@/services/types";
+import { convertToPercentage } from "@/lib/convertToPercentage";
 
 interface ProductCardProps {
   data: GetCategoryBySlugResponse;
 }
 export const ProductCard = ({ data }: ProductCardProps) => {
-  console.log("data", data);
-
-  const esproductocondescuento = parseFloat(data?.pricing?.discountRate) > 0.0;
-
-  const convertToPercentage = (value: string) => {
-    const number = parseFloat(value);
-
-    return `${(number * 100).toFixed(2)}%`;
-  };
+  const discountedProduct = parseFloat(data?.pricing?.discountRate) > 0.0;
 
   return (
     <div className={styles.cardContainer}>
@@ -44,16 +37,9 @@ export const ProductCard = ({ data }: ProductCardProps) => {
           label={`${data.pricing.price} €`}
           className="font-bold"
         />
-        {esproductocondescuento && (
+        {discountedProduct && (
           <div className="flex flex-row">
-            <p
-              className={
-                esproductocondescuento ? "line-through text-gray-500" : ""
-              }
-            >
-              {`${data.pricing.price} € `}
-            </p>
-            <p className={esproductocondescuento ? " text-gray-500" : ""}>
+            <p className={discountedProduct ? " text-gray-500" : ""}>
               {`(${convertToPercentage(data.pricing.discountRate)})`}
             </p>
           </div>
@@ -64,9 +50,7 @@ export const ProductCard = ({ data }: ProductCardProps) => {
         )}
         {data?.pricing?.isInStock < 10 && (
           <p>
-            {`quedan menos de  ${
-              data?.pricing?.isInStock + 1
-            } productos en stock`}
+            {`quedan menos de ${data?.pricing?.isInStock} productos en stock`}
           </p>
         )}
       </div>

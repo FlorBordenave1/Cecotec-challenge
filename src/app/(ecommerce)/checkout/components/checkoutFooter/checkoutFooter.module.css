@@ -1,0 +1,19 @@
+.footerContainer {
+  @apply h-[174px] bg-neutralDark align-center items-center justify-center flex flex-col gap-6;
+}
+
+.footerContent {
+  @apply flex flex-row w-full max-w-[668px] justify-between border-t border-b border-grayLight py-2.5;
+}
+
+.priceDetail {
+  @apply font-bold text-white;
+}
+
+.buttonContainer {
+  @apply w-full flex justify-end max-w-[668px];
+}
+
+.btn {
+  @apply w-[114px];
+}

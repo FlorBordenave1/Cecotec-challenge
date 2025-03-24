@@ -16,6 +16,7 @@
 .actionsContainerMobile {
   @apply flex md:hidden mr-2 items-center gap-2;
 }
+
 .actionsContent {
   @apply gap-2 flex flex-row items-center;
 }
@@ -26,4 +27,12 @@
 
 .button {
   @apply min-w-[12px] h-[25px] px-2 bg-blue50 text-white font-medium;
+}
+
+.dropdownButton {
+  @apply h-8 w-8 rounded-lg scale-90 color-white text-primary;
+}
+
+.dropdownMenu {
+  @apply h-5 w-5 rotate-0 scale-100 color-white;
 }
