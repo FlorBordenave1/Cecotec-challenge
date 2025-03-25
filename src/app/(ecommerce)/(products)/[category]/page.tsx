@@ -1,16 +1,15 @@
 import { CategoriesService } from "@/services/categoriesService";
 import styles from "./category.module.css";
-import { EmptyState } from "@/components/emptyState";
-import { CategoriesList } from "./components/categoriesList";
+import { EmptyState } from "@/components/empty-state";
+import { CategoriesList } from "./components/categories-list";
 
 const Category = async ({
   params,
 }: {
   params: { category: string; orderBy?: string };
 }) => {
-  let categoryBySlug = await CategoriesService.getCategoryBySlug(
-    params.category
-  );
+  const { category } = await params;
+  let categoryBySlug = await CategoriesService.getCategoryBySlug(category);
 
   return (
     <div className={styles.categoryContainer}>

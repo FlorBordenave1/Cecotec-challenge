@@ -8,10 +8,10 @@ enum BadgeBgColor {
   SUCCESS = "bg-apple20",
 }
 
-interface BadgeProps {
+type BadgeProps = {
   label: string;
   type?: keyof typeof BadgeColor;
-}
+};
 
 export const Badge = ({ label, type = "SUCCESS" }: BadgeProps) => {
   return (

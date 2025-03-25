@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { CategoryCard } from "./components/categoryCard";
+import { CategoryCard } from "./components/category-card";
 import { Typography } from "@/components/ui/typography";
 import { CategoriesService } from "@/services/categoriesService";
 
-import styles from "./Home.module.css";
+import styles from "./home.module.css";
 
 const Home = async () => {
   const categories = await CategoriesService.getCategories();

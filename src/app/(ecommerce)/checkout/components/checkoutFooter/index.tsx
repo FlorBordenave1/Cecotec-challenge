@@ -1,15 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
-import { formatPrice } from "@/lib/formatPrice";
 import styles from "./checkoutFooter.module.css";
+import { formatPrice } from "@/lib/formatPrice";
 
 type CheckoutFooterProps = {
   handleCompleteOrder: () => void;
+  totalPrice: number;
 };
 
 export const CheckoutFooter = ({
   handleCompleteOrder,
+  totalPrice,
 }: CheckoutFooterProps) => {
+  const price = formatPrice(totalPrice.toString());
   return (
     <div className={styles.footerContainer}>
       <div className={styles.footerContent}>
@@ -20,7 +23,7 @@ export const CheckoutFooter = ({
         />
         <Typography
           variant="body"
-          label={formatPrice("386,78")}
+          label={price}
           className={styles.priceDetail}
         />
       </div>

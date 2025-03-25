@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import styles from "./navbar.module.css";
 import Image from "next/image";
 import logo from "../../../../../../public/images/LogoCecotecWhite.png";
-import { LogoComponent } from "@/components/logoComponent";
+import { LogoComponent } from "@/components/logo-component";
 
 export const CheckoutNavbar = () => {
   const router = useRouter();

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
-import { CustomInput } from "@/components/customInput";
+import { CustomInput } from "@/components/custom-input";
 
 import { UserData } from "../../login.controller";
 

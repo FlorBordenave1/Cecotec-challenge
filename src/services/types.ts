@@ -1,4 +1,4 @@
-export interface GetCategoryBySlugResponse {
+export type GetCategoryBySlugResponse = {
   id: number;
   name: string;
   pricing: Pricing;
@@ -7,14 +7,14 @@ export interface GetCategoryBySlugResponse {
   mainImage: string;
   shippingShortDescription: string;
   sold: number;
-}
+};
 
-export interface Pricing {
+export type Pricing = {
   currency: string;
   price: string;
   discountRate: string;
   isInStock: number;
-}
+};
 
 export type GetCategoriesResponse = {
   name: string;

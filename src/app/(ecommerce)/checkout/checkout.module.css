@@ -5,3 +5,7 @@
 .footerContainer {
   @apply w-full;
 }
+
+.checkoutContent {
+  @apply flex justify-between flex-col h-[calc(100vh-64px)];
+}

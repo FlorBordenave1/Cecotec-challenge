@@ -1,0 +1,11 @@
+.categoryListContainer {
+  @apply max-w-[1436px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-5 mx-4;
+}
+
+.headerContainer {
+  @apply flex flex-row items-center p-4 w-full justify-between;
+}
+
+.label {
+  @apply text-blue50 font-bold;
+}

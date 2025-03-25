@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Proyecto E-commerce con Next.js y ShadCN
 
-## Getting Started
+Este proyecto es una aplicación de e-commerce desarrollada con **Next.js**, **tailwindcss**, y **ShadCN** como biblioteca de componentes. Implementa un sistema de autenticación, gestión de carrito y visualización de productos mediante Fetch API y Context API.
 
-First, run the development server:
+## 📦 Instalación
+
+1. Clona este repositorio:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/FlorBordenave1/Cecotec-challenge
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Accede al directorio del proyecto
+3. Instala las dependencias:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Ejecución
 
-## Learn More
+Para iniciar el entorno de desarrollo:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+  npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📚 Estructura del Proyecto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Me decidi por una estructura basada en features.
 
-## Deploy on Vercel
+## 🌐 Funcionalidades
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **Home Page**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Header con logo y menú de usuario.
+- Grid de categorías con diseño responsive (5 en escritorio, 4 en tablet, 2 en móvil).
+- Footer con botón de cierre de sesión.
+
+### **Login Page**
+
+- Formulario de login.
+- Validación de credenciales a partir de un archivo JSON local.
+- Manejo de estado con Context API.
+- Toast de error en caso de credenciales incorrectas.
+
+### **Categoría Page**
+
+- Visualización de productos de una categoría.
+- Grid de productos (5 en escritorio, 3 en tablet, 2 en móvil).
+- Ordenamiento por productos más vendidos.
+- Visualización de stock y descuentos.
+
+### **Producto Page**
+
+- Detalle del producto con imagen e información.
+- Botón para añadir al carrito.
+
+### **Carrito Page**
+
+- Visualización de productos en el carrito.
+- Botones para incrementar, decrementar y eliminar productos.
+- Cálculo dinámico de cantidades y precios.
+- Botón para realizar el pago (simulado).
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Next.js**
+- **ShadCN**
+- **Context API**
+- **Fetch API**
+- **LocalStorage**

@@ -1,27 +1,24 @@
 "use client";
 
-import { createContext, FC, PropsWithChildren, useState } from "react";
+import { createContext, PropsWithChildren, useEffect, useState } from "react";
 
-interface User {
+type User = {
   username: string;
   firstName: string;
   email: string;
-}
+};
 
-interface UserContextProps {
+type UserContextProps = {
   user: User | null;
   setUser: (user: User) => void;
   removeUser: () => void;
   saveUser: (user: User) => void;
-}
+};
 
 export const UserContext = createContext<UserContextProps | null>(null);
 
-export const UserContextProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(() => {
-    const storedUser = localStorage?.getItem("user");
-    return storedUser ? (JSON.parse(storedUser) as User) : null;
-  });
+export const UserContextProvider = ({ children }: PropsWithChildren) => {
+  const [user, setUser] = useState<User | null>(null);
 
   const removeUser = () => {
     setUser(null);
@@ -32,6 +29,11 @@ export const UserContextProvider: FC<PropsWithChildren> = ({ children }) => {
     setUser(user);
     localStorage?.setItem("user", JSON.stringify(user));
   };
+
+  useEffect(() => {
+    const storedUser = localStorage?.getItem("user");
+    if (storedUser) setUser(JSON.parse(storedUser));
+  }, []);
 
   return (
     <UserContext.Provider value={{ user, setUser, removeUser, saveUser }}>

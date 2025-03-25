@@ -8,7 +8,7 @@ import { Input } from "../ui/input";
 import { EyeIcon } from "@/icons/eyeIcon";
 import { EyeOffIcon } from "@/icons/eyeOffIcon";
 
-import styles from "./customInput.module.css";
+import styles from "./custom-input.module.css";
 
 const TYPE_PASSWORD = "password";
 

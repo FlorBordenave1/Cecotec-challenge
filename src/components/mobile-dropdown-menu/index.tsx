@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { Typography } from "../ui/typography";
 import { CartIcon } from "@/icons/cartIcon";
-import styles from "./mobileDropdownMenu.module.css";
+import styles from "./mobile-dropdown-menu.module.css";
 
 type MobileDropdownMenuProps = {
   isLogged: boolean;
@@ -28,7 +28,7 @@ export const MobileDropdownMenu = ({
       </Button>
     </DropdownMenuTrigger>
 
-    <DropdownMenuContent align="end">
+    <DropdownMenuContent align="end" className="z-[150]">
       <DropdownMenuItem>
         <div className={styles.actionsContent}>
           <Typography

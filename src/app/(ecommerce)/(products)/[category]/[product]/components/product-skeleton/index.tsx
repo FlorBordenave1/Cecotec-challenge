@@ -1,5 +1,5 @@
 import { Skeleton } from "@/components/ui/skeleton";
-import styles from "./productSkeleton.module.css";
+import styles from "./product-skeleton.module.css";
 
 export const ProductSkeleton = () => {
   return (

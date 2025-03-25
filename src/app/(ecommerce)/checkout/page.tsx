@@ -6,7 +6,7 @@ import { ItemCard } from "./components/itemCard";
 import { Header } from "./components/header";
 import { sumQuantities } from "@/lib/sumQuantities";
 import { CheckoutFooter } from "./components/checkoutFooter";
-import { EmptyState } from "@/components/emptyState";
+import { EmptyState } from "@/components/empty-state";
 import { useRouter } from "next/navigation";
 import { ConfirmationModal } from "./components/confirmationModal";
 import styles from "./checkout.module.css";
@@ -21,6 +21,14 @@ const Checkout = () => {
     checkoutContext?.clearCart();
     router.push("/home");
   };
+
+  function calculateTotalPrice(items: CartItem[]) {
+    return items.reduce((total, item) => {
+      const price = parseFloat(item.pricing.price);
+      const quantity = item.quantity;
+      return total + price * quantity;
+    }, 0);
+  }
 
   if (!checkoutContext?.items?.length) {
     return (
@@ -42,7 +50,7 @@ const Checkout = () => {
         />
       )}
 
-      <div className="flex justify-between flex-col h-[calc(100vh-64px)]">
+      <div className={styles.checkoutContent}>
         <div>
           <Header quantity={sumQuantities(checkoutContext?.items)} />
           {checkoutContext?.items.map((item: CartItem, index: number) => (
@@ -56,7 +64,10 @@ const Checkout = () => {
           ))}
         </div>
         <div className={styles.footerContainer}>
-          <CheckoutFooter handleCompleteOrder={() => setOpenDialog(true)} />
+          <CheckoutFooter
+            handleCompleteOrder={() => setOpenDialog(true)}
+            totalPrice={calculateTotalPrice(checkoutContext?.items)}
+          />
         </div>
       </div>
     </>

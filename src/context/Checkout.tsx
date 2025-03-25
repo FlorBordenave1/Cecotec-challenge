@@ -26,11 +26,10 @@ type CheckoutContextProps = {
 export const CheckoutContext = createContext<CheckoutContextProps | null>(null);
 
 export const CheckoutProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [items, setItems] = useState<CartItem[]>(
-    localStorage.getItem("cartItems")
-      ? (JSON.parse(localStorage.getItem("cartItems")!) as CartItem[])
-      : []
-  );
+  const [items, setItems] = useState<CartItem[]>([]);
+
+  const localStorage =
+    typeof window !== "undefined" ? window.localStorage : null;
 
   const showToast = () => {
     toast.success("Producto agregado al carrito");
@@ -70,8 +69,10 @@ export const CheckoutProvider: FC<PropsWithChildren> = ({ children }) => {
   const removeUnit = (item: GetCategoryBySlugResponse) => {
     const isItemInCart = items.find((cartItem) => cartItem.id === item.id);
     if (isItemInCart?.quantity === 1) {
+      removeItem(item);
       return;
     }
+
     setItems(
       items.map((cartItem) =>
         cartItem.id === item.id
@@ -86,15 +87,15 @@ export const CheckoutProvider: FC<PropsWithChildren> = ({ children }) => {
   };
 
   useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(items));
-  }, [items]);
-
-  useEffect(() => {
-    const cartItems = localStorage.getItem("cartItems");
+    const cartItems = localStorage?.getItem("cartItems");
     if (cartItems) {
       setItems(JSON.parse(cartItems));
     }
   }, []);
+
+  useEffect(() => {
+    localStorage?.setItem("cartItems", JSON.stringify(items));
+  }, [items]);
 
   return (
     <CheckoutContext.Provider

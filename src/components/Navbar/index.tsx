@@ -9,9 +9,9 @@ import { CartIcon } from "@/icons/cartIcon";
 import styles from "./navbar.module.css";
 import { CheckoutContext } from "@/context/Checkout";
 import { sumQuantities } from "@/lib/sumQuantities";
-import { LogoComponent } from "../logoComponent";
-import { MobileDropdownMenu } from "../mobileDropdownMenu";
-import { AuthButton } from "../authButton";
+import { LogoComponent } from "../logo-component";
+import { MobileDropdownMenu } from "../mobile-dropdown-menu";
+import { AuthButton } from "../auth-button";
 
 const Navbar = () => {
   const userContext = use(UserContext);

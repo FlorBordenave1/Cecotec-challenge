@@ -2,6 +2,14 @@
   @apply w-full p-2 bg-neutral20 h-40 rounded-xl  hover:bg-neutral30  hover:shadow-[0_0_10px] hover:shadow-neutral30;
 }
 
+.cardContent {
+  @apply cursor-pointer h-full flex flex-row items-center justify-start;
+}
+
+.imageContainer {
+  @apply relative w-full h-full;
+}
+
 .image {
   @apply absolute inset-0 h-full  object-cover dark:brightness-[0.2] dark:grayscale;
 }

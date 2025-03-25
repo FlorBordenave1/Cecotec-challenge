@@ -1,8 +1,7 @@
-"use client";
 import Image from "next/image";
 
 import { Typography } from "@/components/ui/typography";
-import styles from "./styles.module.css";
+import styles from "./category-card.module.css";
 
 type CategoryType = {
   name: string;
@@ -10,14 +9,14 @@ type CategoryType = {
   image: string;
 };
 
-interface CategoryCardProps {
+type CategoryCardProps = {
   data: CategoryType;
-}
+};
 export const CategoryCard = ({ data }: CategoryCardProps) => {
   return (
     <div className={styles.cardContainer}>
-      <div className="cursor-pointer h-full flex flex-row items-center justify-start">
-        <div className="relative w-full h-full">
+      <div className={styles.cardContent}>
+        <div className={styles.imageContainer}>
           <Image
             priority
             src={data.image}

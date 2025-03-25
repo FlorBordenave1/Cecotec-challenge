@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./logoComponent.module.css";
+import styles from "./logo-component.module.css";
 import blueLogo from "../../../public/images/LogoCecotec.png";
 import whiteLogo from "../../../public/images/LogoCecotecWhite.png";
 

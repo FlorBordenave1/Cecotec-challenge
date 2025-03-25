@@ -1,0 +1,23 @@
+.buttonContainer {
+  @apply flex flex-row rounded-lg border-[1px] border-neutral30 w-[95px] h-[40px] md:h-[57px];
+}
+
+.quantity {
+  @apply w-1/2 flex items-center justify-center;
+}
+
+.buttonsContent {
+  @apply w-1/2 flex flex-col items-center justify-center;
+}
+
+.button {
+  @apply w-full h-full bg-neutral30 hover:bg-neutral40 flex justify-center items-center;
+}
+
+.radiusTop {
+  @apply rounded-tr-lg;
+}
+
+.radiusBottom {
+  @apply rounded-br-lg;
+}

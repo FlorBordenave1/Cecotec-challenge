@@ -1,6 +1,7 @@
 import { ChevronDownIcon } from "@/icons/chevronDownIcon";
 import { ChevronUpIcon } from "@/icons/chevronUpIcon";
 import { Typography } from "../ui/typography";
+import styles from "./amount-button.module.css";
 
 type AmountButtonProps = {
   quantity: number;
@@ -13,20 +14,20 @@ export const AmountButton = ({
   decrease,
 }: AmountButtonProps) => {
   return (
-    <div className="rounded-lg border-[1px] border-neutral30 w-[95px] h-[40px] md:h-[57px] flex flex-row">
-      <div className="w-1/2 flex items-center justify-center">
+    <div className={styles.buttonContainer}>
+      <div className={styles.quantity}>
         <Typography label={quantity.toString()} variant="body" />
       </div>
-      <div className=" w-1/2 flex flex-col items-center justify-center ">
+      <div className={styles.buttonsContent}>
         <button
           onClick={increase}
-          className="w-full h-full bg-neutral30 hover:bg-neutral40 rounded-tr-lg flex justify-center items-center"
+          className={`${styles.button} ${styles.radiusTop}`}
         >
           <ChevronUpIcon />
         </button>
         <button
           onClick={decrease}
-          className="w-full h-full bg-neutral30 hover:bg-neutral40 rounded-br-lg  flex justify-center items-center"
+          className={`${styles.button} ${styles.radiusBottom}`}
         >
           <ChevronDownIcon />
         </button>

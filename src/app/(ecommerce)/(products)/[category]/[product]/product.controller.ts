@@ -10,9 +10,11 @@ export const useProductController = () => {
     product: string;
   }>();
   const checkoutContext = use(CheckoutContext);
+
   const [product, setProduct] = useState<GetCategoryBySlugResponse>();
   const [isLoadingProduct, setIsLoadingProduct] = useState<boolean>(true);
-  const hasProductStock = product?.pricing?.isInStock;
+
+  const hasProductStock = Boolean(product?.pricing?.isInStock);
 
   const getProductByCategory = async () => {
     const productByCategory = await ProductsService.getProductByCategory(

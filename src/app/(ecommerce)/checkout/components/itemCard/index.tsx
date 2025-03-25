@@ -4,7 +4,7 @@ import styles from "./ItemCard.module.css";
 import Image from "next/image";
 import { Badge } from "@/components/badge";
 import { convertToPercentage } from "@/lib/convertToPercentage";
-import { AmountButton } from "@/components/amountButton";
+import { AmountButton } from "@/components/amount-button";
 import { calculateDiscountedPrice } from "@/lib/calculateDiscountedPrice";
 import { formatPrice } from "@/lib/formatPrice";
 import { TrashIcon } from "@/icons/trashIcon";

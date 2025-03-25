@@ -1,16 +1,15 @@
 "use client";
 import Image from "next/image";
 import { Typography } from "@/components/ui/typography";
-import styles from "./styles.module.css";
+import styles from "./product-card.module.css";
 import { GetCategoryBySlugResponse } from "@/services/types";
 import { convertToPercentage } from "@/lib/convertToPercentage";
 import { formatPrice } from "@/lib/formatPrice";
 import { calculateDiscountedPrice } from "@/lib/calculateDiscountedPrice";
-import { Badge } from "@/components/badge";
 
-interface ProductCardProps {
+type ProductCardProps = {
   data: GetCategoryBySlugResponse;
-}
+};
 export const ProductCard = ({ data }: ProductCardProps) => {
   const discountedProduct = parseFloat(data?.pricing?.discountRate) > 0.0;
   const isInStock = data?.pricing?.isInStock;
@@ -22,21 +21,20 @@ export const ProductCard = ({ data }: ProductCardProps) => {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.cardContent}>
-        <div className="relative w-full h-1/2">
+        <div className={styles.imageContainer}>
           <Image
             priority
             src={data.mainImage}
             alt="Logo Cecotec"
             layout="fill"
-            objectFit="contain"
-            className="absolute inset-0"
+            className={styles.image}
           />
         </div>
 
         <Typography
           variant="body"
           label={`${data.name}`}
-          className="text-center"
+          className={"text-center"}
         />
 
         <Typography
@@ -49,15 +47,15 @@ export const ProductCard = ({ data }: ProductCardProps) => {
                 )
               : formatPrice(data.pricing.price)
           }
-          className="font-bold text-cherry60"
+          className={styles.price}
         />
 
         {discountedProduct && (
-          <div className="flex flex-row">
+          <div className={styles.discountContainer}>
             <Typography
               label={formatPrice(data.pricing.price)}
               variant="body-small"
-              className={"text-grayLight line-through "}
+              className={styles.discountPrice}
             />
 
             <Typography
@@ -80,7 +78,7 @@ export const ProductCard = ({ data }: ProductCardProps) => {
           <Typography
             label={unitLabel}
             variant="body-small"
-            className="text-center text-cherry60"
+            className={styles.discount}
           />
         )}
       </div>
