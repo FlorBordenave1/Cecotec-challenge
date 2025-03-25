@@ -25,8 +25,11 @@ const Checkout = () => {
   function calculateTotalPrice(items: CartItem[]) {
     return items.reduce((total, item) => {
       const price = parseFloat(item.pricing.price);
+      const discountRate = parseFloat(item.pricing.discountRate);
       const quantity = item.quantity;
-      return total + price * quantity;
+
+      const precioFinal = price * (1 - discountRate) * quantity;
+      return total + precioFinal;
     }, 0);
   }
 

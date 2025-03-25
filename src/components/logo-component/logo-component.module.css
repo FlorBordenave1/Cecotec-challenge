@@ -1,3 +1,7 @@
 .imageContainer {
-  @apply basis-1/4 hover:cursor-pointer flex content-center;
+  @apply basis-1/4 hover:cursor-pointer;
+}
+
+.whiteLogo {
+  @apply flex content-center justify-center;
 }
