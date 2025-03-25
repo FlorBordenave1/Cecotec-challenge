@@ -9,7 +9,7 @@ const Category = async ({
   params: { category: string; orderBy?: string };
 }) => {
   const { category } = await params;
-  let categoryBySlug = await CategoriesService.getCategoryBySlug(category);
+  const categoryBySlug = await CategoriesService.getCategoryBySlug(category);
 
   return (
     <div className={styles.categoryContainer}>

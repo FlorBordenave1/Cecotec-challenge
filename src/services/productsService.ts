@@ -6,7 +6,7 @@ export const ProductsService = {
       );
       return await res.json();
     } catch (error) {
-      throw new Error("Error in get product by category");
+      throw new Error(`Error in get product by category: ${error}`);
     }
   },
 };
